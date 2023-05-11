@@ -83,7 +83,8 @@ class BaseService {
                     observer.onNext(result)
                     observer.onCompleted()
                 case .failure(let error):
-                    observer.onError(error)
+                    Logger.log("error:" + String(describing: error.errorDescription))
+                    observer.onCompleted()
                 }
             }
 

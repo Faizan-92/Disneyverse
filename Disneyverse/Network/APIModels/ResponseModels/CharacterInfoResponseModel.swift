@@ -11,6 +11,11 @@ import Foundation
 struct CharacterInfoResponseModel: Codable {
     let pageInfo: PageInfo?
     let data: [CharacterInfo]?
+
+    enum CodingKeys: String, CodingKey {
+        case pageInfo = "info"
+        case data
+    }
 }
 
 // MARK: - CharacterInfo

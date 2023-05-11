@@ -11,9 +11,8 @@ import RxSwift
 
 enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
-    case fetchAllCharacters
     case getOneCharacter(id: String)
-    case filterCharacters(name: String)
+    case filterCharacters(name: String, pageNumber: Int, pageSize: Int)
 
     var endPoint: URL {
         return baseUrl.appendingPathComponent(path)
@@ -21,7 +20,7 @@ enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
     var path: String {
         switch self {
-        case .fetchAllCharacters, .filterCharacters:
+        case .filterCharacters:
             return "character"
         case .getOneCharacter(let characterId):
             return "character/" + (characterId)
@@ -30,8 +29,12 @@ enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
     var queryParams: [URLQueryItem]? {
         switch self {
-        case .filterCharacters(let inputName):
-            return [URLQueryItem(name: "name", value: inputName)]
+        case .filterCharacters(let inputName, let pageNumber, let pageSize):
+            return [
+                URLQueryItem(name: "name", value: inputName),
+                URLQueryItem(name: "page", value: String(pageNumber)),
+                URLQueryItem(name: "pageSize", value: String(pageSize))
+            ]
         default:
             return nil
         }
@@ -46,23 +49,18 @@ enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
 final class DisneyService: BaseService {
     
-    func fetchAllCharacters(
-        completionHandler: @escaping ((CharacterInfoResponseModel) -> Void),
-        errorHandler: @escaping (() -> Void)
-    ) {
-        let endPoint: DisneyServiceEndPoint = .fetchAllCharacters
-        callApi(
-            url: endPoint.url,
-            method: endPoint.methodType,
-            completionHandler: completionHandler,
-            errorHandler: { _ in
-                errorHandler()
-            }
-        )
-    }
+    func fetchCharacters(
+        havingName name: String,
+        pageNumber: Int,
+        pageSize: Int
+    ) -> Observable<CharacterInfoResponseModel?> {
 
-    func fetchCharacters(havingName name: String) -> Observable<CharacterInfoResponseModel?> {
-        let endPoint: DisneyServiceEndPoint = .filterCharacters(name: name)
+        let endPoint: DisneyServiceEndPoint = .filterCharacters(
+            name: name,
+            pageNumber: pageNumber,
+            pageSize: pageSize
+        )
+
         return makeRxRequest(
             url: endPoint.url,
             method: endPoint.methodType
