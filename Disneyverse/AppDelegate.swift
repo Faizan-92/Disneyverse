@@ -10,9 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private func getKeyWindow() -> UIWindow? {
-        UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true

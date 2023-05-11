@@ -9,73 +9,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailController" customModule="Disneyverse" customModuleProvider="target">
-            <connections>
-                <outlet property="filmsCollectionView" destination="5HH-Ff-xxh" id="L6W-Gu-uDr"/>
-                <outlet property="nameLabel" destination="kKx-sR-YSE" id="VYZ-Kq-rAn"/>
-                <outlet property="profileImage" destination="zda-8D-TzU" id="rWj-ke-8M0"/>
-                <outlet property="videoGamesCollectionView" destination="Zoz-L8-udS" id="cQw-up-aJp"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailController" customModule="Disneyverse" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zda-8D-TzU" userLabel="profile_image_view">
-                    <rect key="frame" x="96.666666666666686" y="59" width="200" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="zda-8D-TzU" secondAttribute="height" id="2FK-pI-AjM"/>
-                        <constraint firstAttribute="height" constant="200" id="akh-HZ-hPS"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKx-sR-YSE" userLabel="character_name">
-                    <rect key="frame" x="196.66666666666666" y="279" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5HH-Ff-xxh" userLabel="films_collection_view">
-                    <rect key="frame" x="0.0" y="289" width="393" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="L6n-ZV-vZ6"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mWr-8a-A22">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-L8-udS" userLabel="video_games_collection_view">
-                    <rect key="frame" x="0.0" y="359" width="393" height="459"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RfD-6V-SD5">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="hvK-cD-sxc"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="hvK-cD-sxc" firstAttribute="trailing" secondItem="Zoz-L8-udS" secondAttribute="trailing" id="6sc-EE-rIi"/>
-                <constraint firstItem="Zoz-L8-udS" firstAttribute="top" secondItem="5HH-Ff-xxh" secondAttribute="bottom" constant="20" id="7Je-Yv-3zZ"/>
-                <constraint firstItem="zda-8D-TzU" firstAttribute="top" secondItem="hvK-cD-sxc" secondAttribute="top" id="Gbx-RV-Tqt"/>
-                <constraint firstItem="5HH-Ff-xxh" firstAttribute="leading" secondItem="hvK-cD-sxc" secondAttribute="leading" id="M4D-Md-gfG"/>
-                <constraint firstItem="hvK-cD-sxc" firstAttribute="trailing" secondItem="5HH-Ff-xxh" secondAttribute="trailing" id="Mz6-bJ-epo"/>
-                <constraint firstItem="hvK-cD-sxc" firstAttribute="bottom" secondItem="Zoz-L8-udS" secondAttribute="bottom" id="P7h-tI-309"/>
-                <constraint firstItem="kKx-sR-YSE" firstAttribute="centerX" secondItem="hvK-cD-sxc" secondAttribute="centerX" id="hdv-1l-K5R"/>
-                <constraint firstItem="zda-8D-TzU" firstAttribute="centerX" secondItem="hvK-cD-sxc" secondAttribute="centerX" id="kHf-8T-Vfl"/>
-                <constraint firstItem="5HH-Ff-xxh" firstAttribute="top" secondItem="kKx-sR-YSE" secondAttribute="bottom" constant="10" id="ueH-Wd-0uP"/>
-                <constraint firstItem="Zoz-L8-udS" firstAttribute="leading" secondItem="hvK-cD-sxc" secondAttribute="leading" id="wkg-qC-YQA"/>
-                <constraint firstItem="kKx-sR-YSE" firstAttribute="top" secondItem="zda-8D-TzU" secondAttribute="bottom" constant="20" id="y1o-JG-GKM"/>
-            </constraints>
-            <point key="canvasLocation" x="19" y="21"/>
-        </view>
+        <viewController id="PDg-Fm-EZx" customClass="CharacterDetailViewController" customModule="Disneyverse" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="x0h-oc-PyR">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-Nn-B8A" userLabel="profile_image_view">
+                        <rect key="frame" x="96.666666666666686" y="69" width="200" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MeW-Nn-B8A" secondAttribute="height" id="DZh-Rx-mq1"/>
+                            <constraint firstAttribute="height" constant="200" id="aTj-XE-WV7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNY-PV-0KJ" userLabel="character_name">
+                        <rect key="frame" x="96.666666666666686" y="279" width="200" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="atX-gl-fGa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="blK-Te-Rge" userLabel="films_collection_view">
+                        <rect key="frame" x="0.0" y="289" width="393" height="70"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="s5L-sW-tOe"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Snp-Cx-6ta">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GMK-b5-ZKA" userLabel="video_games_collection_view">
+                        <rect key="frame" x="0.0" y="369" width="393" height="449"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Oj-9S-J1D">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="Vwg-Tf-eN3"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="GMK-b5-ZKA" firstAttribute="trailing" secondItem="Vwg-Tf-eN3" secondAttribute="trailing" id="5sU-qi-w9d"/>
+                    <constraint firstItem="blK-Te-Rge" firstAttribute="trailing" secondItem="Vwg-Tf-eN3" secondAttribute="trailing" id="9Ad-BB-1yH"/>
+                    <constraint firstItem="GMK-b5-ZKA" firstAttribute="leading" secondItem="Vwg-Tf-eN3" secondAttribute="leading" id="HW7-sm-zOz"/>
+                    <constraint firstItem="blK-Te-Rge" firstAttribute="top" secondItem="yNY-PV-0KJ" secondAttribute="bottom" constant="10" id="OG9-bt-lF2"/>
+                    <constraint firstItem="MeW-Nn-B8A" firstAttribute="top" secondItem="Vwg-Tf-eN3" secondAttribute="top" constant="10" id="Qve-Lr-xnh"/>
+                    <constraint firstItem="GMK-b5-ZKA" firstAttribute="top" secondItem="blK-Te-Rge" secondAttribute="bottom" constant="10" id="ShA-zX-rKe"/>
+                    <constraint firstItem="blK-Te-Rge" firstAttribute="leading" secondItem="Vwg-Tf-eN3" secondAttribute="leading" id="WJ1-uR-egP"/>
+                    <constraint firstItem="yNY-PV-0KJ" firstAttribute="centerX" secondItem="Vwg-Tf-eN3" secondAttribute="centerX" id="cAg-Ji-Jht"/>
+                    <constraint firstItem="Vwg-Tf-eN3" firstAttribute="bottom" secondItem="GMK-b5-ZKA" secondAttribute="bottom" id="dAo-CT-KtI"/>
+                    <constraint firstItem="MeW-Nn-B8A" firstAttribute="centerX" secondItem="Vwg-Tf-eN3" secondAttribute="centerX" id="rfw-VX-9Vc"/>
+                    <constraint firstItem="yNY-PV-0KJ" firstAttribute="top" secondItem="MeW-Nn-B8A" secondAttribute="bottom" constant="10" id="vkn-Ih-0ka"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="view" destination="x0h-oc-PyR" id="mmW-7L-4Vj"/>
+            </connections>
+            <point key="canvasLocation" x="-637" y="-626"/>
+        </viewController>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
