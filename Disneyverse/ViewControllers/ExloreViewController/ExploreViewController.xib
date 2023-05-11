@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExploreViewController" customModule="Disneyverse" customModuleProvider="target">
+            <connections>
+                <outlet property="characterListTableView" destination="Nmf-Uo-Eka" id="SOy-1s-nWA"/>
+                <outlet property="searchBar" destination="xs0-Gc-5tN" id="A2m-sk-WTa"/>
+                <outlet property="view" destination="U8H-NM-V3Z" id="JwI-Co-Z6u"/>
+                <outlet property="zeroStateView" destination="jTP-bC-rKI" id="xrs-Wr-Scq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="U8H-NM-V3Z">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nmf-Uo-Eka" userLabel="character_list_table_view">
+                    <rect key="frame" x="16" y="116" width="361" height="702"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTP-bC-rKI" userLabel="zero_state_view">
+                    <rect key="frame" x="16" y="116" width="361" height="702"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_oops" translatesAutoresizingMaskIntoConstraints="NO" id="xKx-2T-wV1">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="702"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="xKx-2T-wV1" firstAttribute="top" secondItem="jTP-bC-rKI" secondAttribute="top" id="6Sa-GC-eTw"/>
+                        <constraint firstAttribute="bottom" secondItem="xKx-2T-wV1" secondAttribute="bottom" id="bmz-UH-7Jh"/>
+                        <constraint firstItem="xKx-2T-wV1" firstAttribute="leading" secondItem="jTP-bC-rKI" secondAttribute="leading" id="e6H-sR-CCY"/>
+                        <constraint firstAttribute="trailing" secondItem="xKx-2T-wV1" secondAttribute="trailing" id="wNr-pd-b3W"/>
+                    </constraints>
+                </view>
+                <searchBar contentMode="redraw" placeholder="Search for your character here" translatesAutoresizingMaskIntoConstraints="NO" id="xs0-Gc-5tN">
+                    <rect key="frame" x="10" y="60" width="373" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Me6-m8-fsB"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                </searchBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="PWX-y8-rcr"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jTP-bC-rKI" firstAttribute="top" secondItem="Nmf-Uo-Eka" secondAttribute="top" id="3g9-EF-sRI"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Nmf-Uo-Eka" secondAttribute="bottom" id="D74-ga-EGm"/>
+                <constraint firstItem="Nmf-Uo-Eka" firstAttribute="leading" secondItem="U8H-NM-V3Z" secondAttribute="leadingMargin" id="QO6-2D-O1k"/>
+                <constraint firstItem="jTP-bC-rKI" firstAttribute="bottom" secondItem="Nmf-Uo-Eka" secondAttribute="bottom" id="ZMh-bO-W3v"/>
+                <constraint firstItem="Nmf-Uo-Eka" firstAttribute="top" secondItem="xs0-Gc-5tN" secondAttribute="bottom" id="ZQy-eX-GF9"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Nmf-Uo-Eka" secondAttribute="trailing" id="bmR-D6-HtK"/>
+                <constraint firstItem="jTP-bC-rKI" firstAttribute="leading" secondItem="Nmf-Uo-Eka" secondAttribute="leading" id="cAV-s0-vDe"/>
+                <constraint firstAttribute="trailing" secondItem="xs0-Gc-5tN" secondAttribute="trailing" constant="10" id="czb-F9-rot"/>
+                <constraint firstItem="xs0-Gc-5tN" firstAttribute="leading" secondItem="U8H-NM-V3Z" secondAttribute="leading" constant="10" id="fUm-g0-Amz"/>
+                <constraint firstItem="xs0-Gc-5tN" firstAttribute="top" secondItem="U8H-NM-V3Z" secondAttribute="top" constant="60" id="hYS-8Q-Szw"/>
+                <constraint firstItem="jTP-bC-rKI" firstAttribute="trailing" secondItem="Nmf-Uo-Eka" secondAttribute="trailing" id="oET-EO-2Mq"/>
+            </constraints>
+            <point key="canvasLocation" x="-185" y="-642"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_oops" width="400" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

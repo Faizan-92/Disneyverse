@@ -24,7 +24,16 @@ extension ExploreViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Logger.log("did selected row: \(indexPath.row)")
+        let selectedCharacter = viewModel.characters[indexPath.row]
+        let viewModel = CharacterDetailViewModel(
+            imageUrl: URL(string: selectedCharacter.imageUrl ?? ""),
+            name: selectedCharacter.name,
+            filmsList: selectedCharacter.films ?? [],
+            videoGamesList: selectedCharacter.videoGames ?? [],
+            sourceUrl: URL(string: selectedCharacter.sourceUrl ?? "")
+        )
+        let characterDetailViewController = CharacterDetailViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
 
