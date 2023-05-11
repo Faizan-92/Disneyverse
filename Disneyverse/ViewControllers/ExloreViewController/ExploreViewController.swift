@@ -14,6 +14,7 @@ final class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchAllCharacters()
+        viewModel.fetchCharacter(havingName: "Mike")
     }
 
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
@@ -51,7 +52,7 @@ final class DisneyService: BaseService {
     ) {
         let endPoint: DisneyServiceEndPoint = .fetchAllCharacters
         callApi(
-            urlString: endPoint.url?.absoluteString,
+            url: endPoint.url,
             method: endPoint.methodType,
             completionHandler: completionHandler,
             errorHandler: { _ in
@@ -60,5 +61,12 @@ final class DisneyService: BaseService {
         )
     }
 
+    func fetchCharacters(havingName name: String) -> Observable<CharacterInfoResponseModel?> {
+        let endPoint: DisneyServiceEndPoint = .filterCharacters(name: name)
+        return makeRxRequest(
+            url: endPoint.url,
+            method: endPoint.methodType
+        )
+    }
     
 }

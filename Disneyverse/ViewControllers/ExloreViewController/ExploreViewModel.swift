@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 final class ExploreViewModel {
     
-    let disneyService = DisneyService()
+    private let disneyService = DisneyService()
+    private var disposeBag = DisposeBag()
 
     func fetchAllCharacters() {
         disneyService.fetchAllCharacters(
@@ -21,5 +23,14 @@ final class ExploreViewModel {
             }
         )
     }
-    
+
+    func fetchCharacter(havingName name: String) {
+        disneyService.fetchCharacters(havingName: name)
+            .compactMap { $0 }
+            .withUnretained(self)
+            .subscribe(onNext: { owner, response in
+                Logger.log("api rx: " + response.jsonString)
+            })
+            .disposed(by: disposeBag)
+    }
 }
