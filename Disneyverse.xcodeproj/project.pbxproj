@@ -9,32 +9,43 @@
 /* Begin PBXBuildFile section */
 		B33E00472A0CABBC000A8FEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00462A0CABBC000A8FEA /* AppDelegate.swift */; };
 		B33E00492A0CABBC000A8FEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00482A0CABBC000A8FEA /* SceneDelegate.swift */; };
-		B33E004B2A0CABBC000A8FEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E004A2A0CABBC000A8FEA /* ViewController.swift */; };
+		B33E004B2A0CABBC000A8FEA /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E004A2A0CABBC000A8FEA /* ExploreViewController.swift */; };
 		B33E004E2A0CABBC000A8FEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33E004C2A0CABBC000A8FEA /* Main.storyboard */; };
 		B33E00502A0CABBD000A8FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33E004F2A0CABBD000A8FEA /* Assets.xcassets */; };
 		B33E00532A0CABBD000A8FEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33E00512A0CABBD000A8FEA /* LaunchScreen.storyboard */; };
-		B33E005C2A0CAD04000A8FEA /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B33E005B2A0CAD04000A8FEA /* RxBlocking */; };
-		B33E005E2A0CAD04000A8FEA /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B33E005D2A0CAD04000A8FEA /* RxBlocking-Dynamic */; };
-		B33E00602A0CAD04000A8FEA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B33E005F2A0CAD04000A8FEA /* RxCocoa */; };
-		B33E00622A0CAD04000A8FEA /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00612A0CAD04000A8FEA /* RxCocoa-Dynamic */; };
-		B33E00642A0CAD04000A8FEA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00632A0CAD04000A8FEA /* RxRelay */; };
-		B33E00662A0CAD04000A8FEA /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00652A0CAD04000A8FEA /* RxRelay-Dynamic */; };
-		B33E00682A0CAD04000A8FEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00672A0CAD04000A8FEA /* RxSwift */; };
-		B33E006A2A0CAD04000A8FEA /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00692A0CAD04000A8FEA /* RxSwift-Dynamic */; };
 		B33E006D2A0CAD4B000A8FEA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B33E006C2A0CAD4B000A8FEA /* Alamofire */; };
 		B33E00702A0CAD64000A8FEA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B33E006F2A0CAD64000A8FEA /* SDWebImage */; };
 		B33E00722A0CAD64000A8FEA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B33E00712A0CAD64000A8FEA /* SDWebImageMapKit */; };
+		B33E00772A0CB2B4000A8FEA /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00742A0CB2B4000A8FEA /* BaseService.swift */; };
+		B33E00782A0CB2B4000A8FEA /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00752A0CB2B4000A8FEA /* BaseRequest.swift */; };
+		B33E00792A0CB2B4000A8FEA /* BaseServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00762A0CB2B4000A8FEA /* BaseServiceEndPoint.swift */; };
+		B33E007C2A0CB35A000A8FEA /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E007B2A0CB35A000A8FEA /* Logger.swift */; };
+		B33E00802A0CB392000A8FEA /* DisneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E007F2A0CB392000A8FEA /* DisneyService.swift */; };
+		B33E00852A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00842A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift */; };
+		B33E00882A0CBF3B000A8FEA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */; };
+		B33E008C2A0CC148000A8FEA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008B2A0CC148000A8FEA /* RxCocoa */; };
+		B33E008E2A0CC148000A8FEA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008D2A0CC148000A8FEA /* RxRelay */; };
+		B33E00902A0CC148000A8FEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008F2A0CC148000A8FEA /* RxSwift */; };
+		B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00912A0CC33C000A8FEA /* CodableExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B33E00432A0CABBC000A8FEA /* Disneyverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disneyverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33E00462A0CABBC000A8FEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B33E00482A0CABBC000A8FEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B33E004A2A0CABBC000A8FEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B33E004A2A0CABBC000A8FEA /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		B33E004D2A0CABBC000A8FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B33E004F2A0CABBD000A8FEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B33E00522A0CABBD000A8FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B33E00542A0CABBD000A8FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33E00742A0CB2B4000A8FEA /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		B33E00752A0CB2B4000A8FEA /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		B33E00762A0CB2B4000A8FEA /* BaseServiceEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServiceEndPoint.swift; sourceTree = "<group>"; };
+		B33E007B2A0CB35A000A8FEA /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B33E007F2A0CB392000A8FEA /* DisneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyService.swift; sourceTree = SOURCE_ROOT; };
+		B33E00842A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoResponseModel.swift; sourceTree = "<group>"; };
+		B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		B33E00912A0CC33C000A8FEA /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33E00902A0CC148000A8FEA /* RxSwift in Frameworks */,
+				B33E008E2A0CC148000A8FEA /* RxRelay in Frameworks */,
 				B33E006D2A0CAD4B000A8FEA /* Alamofire in Frameworks */,
-				B33E006A2A0CAD04000A8FEA /* RxSwift-Dynamic in Frameworks */,
-				B33E00642A0CAD04000A8FEA /* RxRelay in Frameworks */,
-				B33E00622A0CAD04000A8FEA /* RxCocoa-Dynamic in Frameworks */,
 				B33E00702A0CAD64000A8FEA /* SDWebImage in Frameworks */,
-				B33E00662A0CAD04000A8FEA /* RxRelay-Dynamic in Frameworks */,
-				B33E00602A0CAD04000A8FEA /* RxCocoa in Frameworks */,
+				B33E008C2A0CC148000A8FEA /* RxCocoa in Frameworks */,
 				B33E00722A0CAD64000A8FEA /* SDWebImageMapKit in Frameworks */,
-				B33E005C2A0CAD04000A8FEA /* RxBlocking in Frameworks */,
-				B33E005E2A0CAD04000A8FEA /* RxBlocking-Dynamic in Frameworks */,
-				B33E00682A0CAD04000A8FEA /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,15 +84,103 @@
 		B33E00452A0CABBC000A8FEA /* Disneyverse */ = {
 			isa = PBXGroup;
 			children = (
+				B33E00862A0CBF20000A8FEA /* ViewControllers */,
+				B33E007D2A0CB362000A8FEA /* Utils */,
+				B33E00932A0CC34D000A8FEA /* Extensions */,
+				B33E00732A0CB287000A8FEA /* Network */,
 				B33E00462A0CABBC000A8FEA /* AppDelegate.swift */,
 				B33E00482A0CABBC000A8FEA /* SceneDelegate.swift */,
-				B33E004A2A0CABBC000A8FEA /* ViewController.swift */,
 				B33E004C2A0CABBC000A8FEA /* Main.storyboard */,
 				B33E004F2A0CABBD000A8FEA /* Assets.xcassets */,
 				B33E00512A0CABBD000A8FEA /* LaunchScreen.storyboard */,
 				B33E00542A0CABBD000A8FEA /* Info.plist */,
 			);
 			path = Disneyverse;
+			sourceTree = "<group>";
+		};
+		B33E00732A0CB287000A8FEA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00812A0CB812000A8FEA /* APIModels */,
+				B33E007E2A0CB381000A8FEA /* DisneyService */,
+				B33E007A2A0CB2D3000A8FEA /* BaseService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B33E007A2A0CB2D3000A8FEA /* BaseService */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00752A0CB2B4000A8FEA /* BaseRequest.swift */,
+				B33E00742A0CB2B4000A8FEA /* BaseService.swift */,
+				B33E00762A0CB2B4000A8FEA /* BaseServiceEndPoint.swift */,
+			);
+			path = BaseService;
+			sourceTree = "<group>";
+		};
+		B33E007D2A0CB362000A8FEA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B33E007B2A0CB35A000A8FEA /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B33E007E2A0CB381000A8FEA /* DisneyService */ = {
+			isa = PBXGroup;
+			children = (
+				B33E007F2A0CB392000A8FEA /* DisneyService.swift */,
+			);
+			path = DisneyService;
+			sourceTree = "<group>";
+		};
+		B33E00812A0CB812000A8FEA /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00832A0CB821000A8FEA /* ResponseModels */,
+				B33E00822A0CB81A000A8FEA /* RequestModels */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		B33E00822A0CB81A000A8FEA /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		B33E00832A0CB821000A8FEA /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00842A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		B33E00862A0CBF20000A8FEA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00892A0CBF41000A8FEA /* ExloreViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B33E00892A0CBF41000A8FEA /* ExloreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B33E004A2A0CABBC000A8FEA /* ExploreViewController.swift */,
+				B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */,
+			);
+			path = ExloreViewController;
+			sourceTree = "<group>";
+		};
+		B33E00932A0CC34D000A8FEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B33E00912A0CC33C000A8FEA /* CodableExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,17 +200,12 @@
 			);
 			name = Disneyverse;
 			packageProductDependencies = (
-				B33E005B2A0CAD04000A8FEA /* RxBlocking */,
-				B33E005D2A0CAD04000A8FEA /* RxBlocking-Dynamic */,
-				B33E005F2A0CAD04000A8FEA /* RxCocoa */,
-				B33E00612A0CAD04000A8FEA /* RxCocoa-Dynamic */,
-				B33E00632A0CAD04000A8FEA /* RxRelay */,
-				B33E00652A0CAD04000A8FEA /* RxRelay-Dynamic */,
-				B33E00672A0CAD04000A8FEA /* RxSwift */,
-				B33E00692A0CAD04000A8FEA /* RxSwift-Dynamic */,
 				B33E006C2A0CAD4B000A8FEA /* Alamofire */,
 				B33E006F2A0CAD64000A8FEA /* SDWebImage */,
 				B33E00712A0CAD64000A8FEA /* SDWebImageMapKit */,
+				B33E008B2A0CC148000A8FEA /* RxCocoa */,
+				B33E008D2A0CC148000A8FEA /* RxRelay */,
+				B33E008F2A0CC148000A8FEA /* RxSwift */,
 			);
 			productName = Disneyverse;
 			productReference = B33E00432A0CABBC000A8FEA /* Disneyverse.app */;
@@ -147,9 +236,9 @@
 			);
 			mainGroup = B33E003A2A0CABBC000A8FEA;
 			packageReferences = (
-				B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B33E006B2A0CAD4B000A8FEA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B33E006E2A0CAD64000A8FEA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				B33E008A2A0CC148000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B33E00442A0CABBC000A8FEA /* Products */;
 			projectDirPath = "";
@@ -178,7 +267,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33E004B2A0CABBC000A8FEA /* ViewController.swift in Sources */,
+				B33E00782A0CB2B4000A8FEA /* BaseRequest.swift in Sources */,
+				B33E00772A0CB2B4000A8FEA /* BaseService.swift in Sources */,
+				B33E004B2A0CABBC000A8FEA /* ExploreViewController.swift in Sources */,
+				B33E00802A0CB392000A8FEA /* DisneyService.swift in Sources */,
+				B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */,
+				B33E00792A0CB2B4000A8FEA /* BaseServiceEndPoint.swift in Sources */,
+				B33E00852A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift in Sources */,
+				B33E00882A0CBF3B000A8FEA /* ExploreViewModel.swift in Sources */,
+				B33E007C2A0CB35A000A8FEA /* Logger.swift in Sources */,
 				B33E00472A0CABBC000A8FEA /* AppDelegate.swift in Sources */,
 				B33E00492A0CABBC000A8FEA /* SceneDelegate.swift in Sources */,
 			);
@@ -400,14 +497,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = exactVersion;
-				version = 6.5.0;
-			};
-		};
 		B33E006B2A0CAD4B000A8FEA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -424,49 +513,17 @@
 				version = 5.9.5;
 			};
 		};
+		B33E008A2A0CC148000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B33E005B2A0CAD04000A8FEA /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		B33E005D2A0CAD04000A8FEA /* RxBlocking-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxBlocking-Dynamic";
-		};
-		B33E005F2A0CAD04000A8FEA /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		B33E00612A0CAD04000A8FEA /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
-		};
-		B33E00632A0CAD04000A8FEA /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		B33E00652A0CAD04000A8FEA /* RxRelay-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxRelay-Dynamic";
-		};
-		B33E00672A0CAD04000A8FEA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		B33E00692A0CAD04000A8FEA /* RxSwift-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B33E005A2A0CAD04000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxSwift-Dynamic";
-		};
 		B33E006C2A0CAD4B000A8FEA /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B33E006B2A0CAD4B000A8FEA /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -481,6 +538,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B33E006E2A0CAD64000A8FEA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		B33E008B2A0CC148000A8FEA /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B33E008A2A0CC148000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B33E008D2A0CC148000A8FEA /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B33E008A2A0CC148000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B33E008F2A0CC148000A8FEA /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B33E008A2A0CC148000A8FEA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
