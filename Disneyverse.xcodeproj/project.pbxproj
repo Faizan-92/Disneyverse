@@ -27,6 +27,10 @@
 		B33E008E2A0CC148000A8FEA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008D2A0CC148000A8FEA /* RxRelay */; };
 		B33E00902A0CC148000A8FEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008F2A0CC148000A8FEA /* RxSwift */; };
 		B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00912A0CC33C000A8FEA /* CodableExtension.swift */; };
+		B3D568DE2A0CEC0E002E3FF4 /* IconAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D568DD2A0CEC0E002E3FF4 /* IconAsset.swift */; };
+		B3E948122A0CD92000A40768 /* CharacterInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E948112A0CD92000A40768 /* CharacterInfoTableViewCell.swift */; };
+		B3E948142A0CD95600A40768 /* CharacterInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E948132A0CD95600A40768 /* CharacterInfoTableViewCell.xib */; };
+		B3E948172A0CDA0600A40768 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E948162A0CDA0600A40768 /* NSObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B33E00842A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoResponseModel.swift; sourceTree = "<group>"; };
 		B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		B33E00912A0CC33C000A8FEA /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		B3D568DD2A0CEC0E002E3FF4 /* IconAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAsset.swift; sourceTree = "<group>"; };
+		B3E948112A0CD92000A40768 /* CharacterInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoTableViewCell.swift; sourceTree = "<group>"; };
+		B3E948132A0CD95600A40768 /* CharacterInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterInfoTableViewCell.xib; sourceTree = "<group>"; };
+		B3E948162A0CDA0600A40768 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B33E007B2A0CB35A000A8FEA /* Logger.swift */,
+				B3D568DD2A0CEC0E002E3FF4 /* IconAsset.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 		B33E00892A0CBF41000A8FEA /* ExloreViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B3E948152A0CD9B700A40768 /* CharacterInfoTableViewCell */,
 				B33E004A2A0CABBC000A8FEA /* ExploreViewController.swift */,
 				B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */,
 			);
@@ -179,8 +189,18 @@
 			isa = PBXGroup;
 			children = (
 				B33E00912A0CC33C000A8FEA /* CodableExtension.swift */,
+				B3E948162A0CDA0600A40768 /* NSObjectExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B3E948152A0CD9B700A40768 /* CharacterInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3E948112A0CD92000A40768 /* CharacterInfoTableViewCell.swift */,
+				B3E948132A0CD95600A40768 /* CharacterInfoTableViewCell.xib */,
+			);
+			path = CharacterInfoTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +277,7 @@
 				B33E00532A0CABBD000A8FEA /* LaunchScreen.storyboard in Resources */,
 				B33E00502A0CABBD000A8FEA /* Assets.xcassets in Resources */,
 				B33E004E2A0CABBC000A8FEA /* Main.storyboard in Resources */,
+				B3E948142A0CD95600A40768 /* CharacterInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E948172A0CDA0600A40768 /* NSObjectExtension.swift in Sources */,
 				B33E00782A0CB2B4000A8FEA /* BaseRequest.swift in Sources */,
 				B33E00772A0CB2B4000A8FEA /* BaseService.swift in Sources */,
 				B33E004B2A0CABBC000A8FEA /* ExploreViewController.swift in Sources */,
+				B3E948122A0CD92000A40768 /* CharacterInfoTableViewCell.swift in Sources */,
 				B33E00802A0CB392000A8FEA /* DisneyService.swift in Sources */,
 				B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */,
 				B33E00792A0CB2B4000A8FEA /* BaseServiceEndPoint.swift in Sources */,
 				B33E00852A0CB9D6000A8FEA /* CharacterInfoResponseModel.swift in Sources */,
+				B3D568DE2A0CEC0E002E3FF4 /* IconAsset.swift in Sources */,
 				B33E00882A0CBF3B000A8FEA /* ExploreViewModel.swift in Sources */,
 				B33E007C2A0CB35A000A8FEA /* Logger.swift in Sources */,
 				B33E00472A0CABBC000A8FEA /* AppDelegate.swift in Sources */,
@@ -353,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -46,18 +46,11 @@ enum DisneyServiceEndPoint: BaseServiceEndPoint {
 
 final class DisneyService: BaseService {
     
-    func fetchAllCharacters(
-        completionHandler: @escaping ((CharacterInfoResponseModel) -> Void),
-        errorHandler: @escaping (() -> Void)
-    ) {
+    func fetchAllCharacters() -> Observable<CharacterInfoResponseModel?> {
         let endPoint: DisneyServiceEndPoint = .fetchAllCharacters
-        callApi(
+        return makeRxRequest(
             url: endPoint.url,
-            method: endPoint.methodType,
-            completionHandler: completionHandler,
-            errorHandler: { _ in
-                errorHandler()
-            }
+            method: endPoint.methodType
         )
     }
 

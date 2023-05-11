@@ -7,30 +7,30 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 final class ExploreViewModel {
     
     private let disneyService = DisneyService()
     private var disposeBag = DisposeBag()
+    
+    var characters: [CharacterInfo] = [ ]
 
-    func fetchAllCharacters() {
-        disneyService.fetchAllCharacters(
-            completionHandler: { charactersInfo in
-                
-            },
-            errorHandler: {
-                Logger.log("api failed: fetchAllCharacters")
-            }
-        )
+    func fetchAllCharacters() -> Observable<[CharacterInfo]?> {
+        disneyService.fetchAllCharacters()
+            .map { $0?.data }
     }
 
-    func fetchCharacter(havingName name: String) {
+    func fetchCharacter(havingName name: String) -> Observable<[CharacterInfo]?> {
         disneyService.fetchCharacters(havingName: name)
-            .compactMap { $0 }
-            .withUnretained(self)
-            .subscribe(onNext: { owner, response in
-                Logger.log("api rx: " + response.jsonString)
-            })
-            .disposed(by: disposeBag)
+            .map { $0?.data }
+    }
+
+    func updateCharacters(newList: [CharacterInfo], shouldReplace: Bool) {
+        if shouldReplace {
+            characters = newList
+        } else {
+            characters += newList
+        }
     }
 }
