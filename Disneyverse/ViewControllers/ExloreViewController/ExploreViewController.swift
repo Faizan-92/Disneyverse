@@ -35,6 +35,14 @@ final class ExploreViewController: UIViewController {
 
     private var disposeBag = DisposeBag()
 
+    init() {
+        super.init(nibName: ExploreViewController.className, bundle: nil)
+    }
+  
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()

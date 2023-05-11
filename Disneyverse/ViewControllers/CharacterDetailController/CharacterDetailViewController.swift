@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharacterDetailViewController: UIViewController {
+final class CharacterDetailViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,6 +20,7 @@ class CharacterDetailViewController: UIViewController {
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: CharacterDetailViewController.className, bundle: nil)
+        self.navigationItem.title = "Details"
     }
 
     required init?(coder: NSCoder) {
