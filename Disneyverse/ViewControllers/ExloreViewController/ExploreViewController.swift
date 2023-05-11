@@ -22,6 +22,7 @@ final class ExploreViewController: UIViewController {
     // Non-private property as it is required in extension
     let viewModel = ExploreViewModel()
 
+    // Whenever this tap is received, we dismiss keyboard.
     private lazy var tapRecognizer: UITapGestureRecognizer = {
         let recognizer = UITapGestureRecognizer(
             target: self,

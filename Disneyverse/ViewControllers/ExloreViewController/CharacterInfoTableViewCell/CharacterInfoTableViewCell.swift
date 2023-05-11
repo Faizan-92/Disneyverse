@@ -22,4 +22,10 @@ final class CharacterInfoTableViewCell: UITableViewCell {
         profileImageView.layer.cornerRadius = 28
         nameLabel.text = viewModel.name
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileImageView.image = nil
+        nameLabel.text = nil
+    }
 }
