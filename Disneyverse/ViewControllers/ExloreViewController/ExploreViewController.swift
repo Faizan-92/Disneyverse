@@ -11,11 +11,27 @@ import RxSwift
 
 final class ExploreViewController: UIViewController {
 
+    deinit {
+        self.view.removeGestureRecognizer(tapRecognizer)
+    }
+
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var zeroStateView: UIView!
     @IBOutlet weak var characterListTableView: UITableView!
+    
+    // Non-private property as it is required in extension
+    let viewModel = ExploreViewModel()
 
-    private let viewModel = ExploreViewModel()
+    private lazy var tapRecognizer: UITapGestureRecognizer = {
+        let recognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIInputViewController.dismissKeyboard)
+        )
+        recognizer.cancelsTouchesInView = false
+        return recognizer
+    }()
+        
+
     private var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -35,60 +51,66 @@ final class ExploreViewController: UIViewController {
     }
 
     private func bindUI() {
+        // Whenever text is changed in search bar, this observable will be published
         searchBar.searchTextField.rx.text
+            .distinctUntilChanged()
             .compactMap { $0 }
             .filter { $0.count > 2 || $0.isEmpty } // at least 3 characters or 0 characters
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance) // wait for 500ms
             .withUnretained(self) // substitute of weak self
             .flatMapLatest({ (owner: ExploreViewController, inputText: String) -> Observable<[CharacterInfo]?> in
-                // In case of no text input, fetch all characters
-                if inputText.isEmpty {
-                    return owner.viewModel.fetchAllCharacters()
-                } else { // Else fetch characters having matching name
-                    return owner.viewModel.fetchCharacter(havingName: inputText)
-                }
+                owner.viewModel.fetchCharacters(havingName: inputText)
             })
+            .compactMap { $0 }
             .withUnretained(self)
             .subscribe(onNext: { owner, characters in
-                owner.zeroStateView.isHidden = characters != nil
                 owner.viewModel.updateCharacters(
-                    newList: characters ?? [],
+                    newList: characters,
                     shouldReplace: true
                 )
                 owner.characterListTableView.reloadData()
             })
             .disposed(by: disposeBag)
+
+        // Whenever tableview scrolls, this observable will be published
+        characterListTableView.rx.contentOffset
+            .skip(1) // skip initial binding, as initial case is handled by search bar binding above
+            .withUnretained(self)
+            .filter({ (owner: ExploreViewController, currentOffset: CGPoint) in
+                guard
+                    owner.characterListTableView.frame.height > 0
+                else { return false }
+                // Trying to fetch data for 5 tableview cells in advance.
+                return currentOffset.y + owner.characterListTableView.frame.height >= owner.characterListTableView.contentSize.height - owner.characterListTableView.estimatedRowHeight * 5
+            })
+        // Adding throttle so that if it is triggered multiple times in 1 second, we make
+        // API call only once.
+            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .flatMapLatest({ (owner: ExploreViewController, _) -> Observable<[CharacterInfo]?> in
+                let name = owner.searchBar.text ?? ""
+                return owner.viewModel.fetchCharacters(havingName: name)
+            })
+            .withUnretained(self)
+            .bind(onNext: { (owner: ExploreViewController, characters: [CharacterInfo]?) in
+                owner.viewModel.updateCharacters(
+                    newList: characters ?? [],
+                    shouldReplace: false
+                )
+                owner.characterListTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.hideZeroStateViewSubject
+            .bind(to: zeroStateView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 
     private func addGestures() {
-        
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIInputViewController.dismissKeyboard)
-        )
-        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tapRecognizer)
     }
 
     @objc private func dismissKeyboard() {
-        view.endEditing(true)
+        searchBar.resignFirstResponder()
     }
 }
-
-extension ExploreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: CharacterInfoTableViewCell.className,
-            for: indexPath
-        )
-        return cell
-    }
-}
-
-extension ExploreViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.characters.count
-    }
-}
-
-extension ExploreViewController: UISearchBarDelegate { }
-

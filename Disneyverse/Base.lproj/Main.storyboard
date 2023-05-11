@@ -17,25 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search for your character here" translatesAutoresizingMaskIntoConstraints="NO" id="wHo-yd-inJ">
-                                <rect key="frame" x="10" y="60" width="373" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="kMB-UE-Pre"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Uhg-e1-260"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-aq-U3p" userLabel="character_list_table_view">
-                                <rect key="frame" x="16" y="136" width="361" height="682"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-aq-U3p" userLabel="character_list_table_view">
+                                <rect key="frame" x="16" y="116" width="361" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tp-a7-gve" userLabel="zero_state_view">
-                                <rect key="frame" x="16" y="136" width="361" height="682"/>
+                                <rect key="frame" x="16" y="116" width="361" height="702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_oops" translatesAutoresizingMaskIntoConstraints="NO" id="9w9-bz-NyR">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="702"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,6 +36,16 @@
                                     <constraint firstItem="9w9-bz-NyR" firstAttribute="leading" secondItem="3tp-a7-gve" secondAttribute="leading" id="bKr-cp-mmd"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" placeholder="Search for your character here" translatesAutoresizingMaskIntoConstraints="NO" id="wHo-yd-inJ">
+                                <rect key="frame" x="10" y="60" width="373" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="kMB-UE-Pre"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Uhg-e1-260"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aeZ-yD-s6C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,7 +58,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KgM-aq-U3p" secondAttribute="trailing" id="gPt-Jg-8yh"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KgM-aq-U3p" secondAttribute="bottom" id="iX9-x3-qSX"/>
                             <constraint firstItem="3tp-a7-gve" firstAttribute="trailing" secondItem="KgM-aq-U3p" secondAttribute="trailing" id="ig5-qR-69T"/>
-                            <constraint firstItem="KgM-aq-U3p" firstAttribute="top" secondItem="wHo-yd-inJ" secondAttribute="bottom" constant="20" id="rUJ-t4-ayF"/>
+                            <constraint firstItem="KgM-aq-U3p" firstAttribute="top" secondItem="wHo-yd-inJ" secondAttribute="bottom" id="rUJ-t4-ayF"/>
                             <constraint firstItem="KgM-aq-U3p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wPy-BZ-U2R"/>
                             <constraint firstItem="3tp-a7-gve" firstAttribute="bottom" secondItem="KgM-aq-U3p" secondAttribute="bottom" id="wdX-9F-bHo"/>
                         </constraints>
