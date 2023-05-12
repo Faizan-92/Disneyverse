@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mhd-yo-092" customClass="VideoGameCollectionViewCell" customModule="Disneyverse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="knz-RY-y8p">
+                <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="disney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKH-Jr-B9A" userLabel="title_label">
+                        <rect key="frame" x="9.9999999999999964" y="14.666666666666664" width="49.666666666666657" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="Q9t-tO-rDX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6J-nI-8hR" userLabel="close_button">
+                        <rect key="frame" x="69.666666666666686" y="8" width="20" height="34.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="b4v-xI-Y01"/>
+                        </constraints>
+                        <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AKH-Jr-B9A" firstAttribute="centerY" secondItem="knz-RY-y8p" secondAttribute="centerY" id="DOx-aG-fLI"/>
+                    <constraint firstAttribute="trailing" secondItem="W6J-nI-8hR" secondAttribute="trailing" constant="10" id="dKq-QY-71Y"/>
+                    <constraint firstItem="W6J-nI-8hR" firstAttribute="centerY" secondItem="knz-RY-y8p" secondAttribute="centerY" id="gBq-1w-LMA"/>
+                    <constraint firstItem="AKH-Jr-B9A" firstAttribute="leading" secondItem="knz-RY-y8p" secondAttribute="leading" constant="10" id="o6P-s3-9cV"/>
+                    <constraint firstItem="W6J-nI-8hR" firstAttribute="leading" secondItem="AKH-Jr-B9A" secondAttribute="trailing" constant="10" id="o85-8A-dHP"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="331" height="50"/>
+            <connections>
+                <outlet property="closeButton" destination="W6J-nI-8hR" id="qZR-cm-kZN"/>
+                <outlet property="lblTitle" destination="AKH-Jr-B9A" id="Y3T-59-Ard"/>
+            </connections>
+            <point key="canvasLocation" x="129" y="20"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

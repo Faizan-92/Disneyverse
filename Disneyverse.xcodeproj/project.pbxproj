@@ -30,6 +30,11 @@
 		B33E00902A0CC148000A8FEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B33E008F2A0CC148000A8FEA /* RxSwift */; };
 		B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E00912A0CC33C000A8FEA /* CodableExtension.swift */; };
 		B3533D202A0D171A00E0CC2E /* FilmDetailCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3533D1F2A0D171A00E0CC2E /* FilmDetailCollectionViewCellViewModel.swift */; };
+		B391E6982A0DF9C4009D8B3B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391E6972A0DF9C4009D8B3B /* StringExtension.swift */; };
+		B391E69A2A0DFB2A009D8B3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391E6992A0DFB2A009D8B3B /* UIColorExtension.swift */; };
+		B391E69D2A0DFC31009D8B3B /* VideoGameCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391E69C2A0DFC31009D8B3B /* VideoGameCollectionViewLayout.swift */; };
+		B391E69F2A0DFC5A009D8B3B /* VideoGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391E69E2A0DFC5A009D8B3B /* VideoGameCollectionViewCell.swift */; };
+		B391E6A32A0DFD39009D8B3B /* VideoGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B391E6A22A0DFD39009D8B3B /* VideoGameCollectionViewCell.xib */; };
 		B3D465D52A0D0A2C00264CFF /* DisneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D465D42A0D0A2C00264CFF /* DisneyService.swift */; };
 		B3D465D82A0D107200264CFF /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D465D72A0D107200264CFF /* CharacterDetailViewController.swift */; };
 		B3D465DA2A0D108300264CFF /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D465D92A0D108300264CFF /* CharacterDetailViewModel.swift */; };
@@ -62,6 +67,11 @@
 		B33E00872A0CBF3B000A8FEA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		B33E00912A0CC33C000A8FEA /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		B3533D1F2A0D171A00E0CC2E /* FilmDetailCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		B391E6972A0DF9C4009D8B3B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B391E6992A0DFB2A009D8B3B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B391E69C2A0DFC31009D8B3B /* VideoGameCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGameCollectionViewLayout.swift; sourceTree = "<group>"; };
+		B391E69E2A0DFC5A009D8B3B /* VideoGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		B391E6A22A0DFD39009D8B3B /* VideoGameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoGameCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3D465D42A0D0A2C00264CFF /* DisneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyService.swift; sourceTree = "<group>"; };
 		B3D465D72A0D107200264CFF /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B3D465D92A0D108300264CFF /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
@@ -204,13 +214,26 @@
 			children = (
 				B33E00912A0CC33C000A8FEA /* CodableExtension.swift */,
 				B3E948162A0CDA0600A40768 /* NSObjectExtension.swift */,
+				B391E6972A0DF9C4009D8B3B /* StringExtension.swift */,
+				B391E6992A0DFB2A009D8B3B /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B391E69B2A0DFC0C009D8B3B /* VideoGameCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B391E69C2A0DFC31009D8B3B /* VideoGameCollectionViewLayout.swift */,
+				B391E69E2A0DFC5A009D8B3B /* VideoGameCollectionViewCell.swift */,
+				B391E6A22A0DFD39009D8B3B /* VideoGameCollectionViewCell.xib */,
+			);
+			path = VideoGameCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		B3D465D62A0D106000264CFF /* CharacterDetailController */ = {
 			isa = PBXGroup;
 			children = (
+				B391E69B2A0DFC0C009D8B3B /* VideoGameCollectionViewCell */,
 				B3D465D72A0D107200264CFF /* CharacterDetailViewController.swift */,
 				B3D465D92A0D108300264CFF /* CharacterDetailViewModel.swift */,
 				B3D465DB2A0D10A600264CFF /* CharacterDetailViewController.xib */,
@@ -313,6 +336,7 @@
 				B33E00502A0CABBD000A8FEA /* Assets.xcassets in Resources */,
 				B3D465DC2A0D10A600264CFF /* CharacterDetailViewController.xib in Resources */,
 				B30DA45A2A0D1631008CE9A3 /* FilmDetailCollectionViewCell.xib in Resources */,
+				B391E6A32A0DFD39009D8B3B /* VideoGameCollectionViewCell.xib in Resources */,
 				B33D624C2A0D367A0001D7A3 /* ExploreViewController.xib in Resources */,
 				B3E948142A0CD95600A40768 /* CharacterInfoTableViewCell.xib in Resources */,
 			);
@@ -329,10 +353,13 @@
 				B33E00782A0CB2B4000A8FEA /* BaseRequest.swift in Sources */,
 				B33E00772A0CB2B4000A8FEA /* BaseService.swift in Sources */,
 				B30DA4572A0D15F9008CE9A3 /* FilmDetailCollectionViewCell.swift in Sources */,
+				B391E69D2A0DFC31009D8B3B /* VideoGameCollectionViewLayout.swift in Sources */,
+				B391E69A2A0DFB2A009D8B3B /* UIColorExtension.swift in Sources */,
 				B33E004B2A0CABBC000A8FEA /* ExploreViewController.swift in Sources */,
 				B3E948122A0CD92000A40768 /* CharacterInfoTableViewCell.swift in Sources */,
 				B3D568E02A0CF0FA002E3FF4 /* ExploreViewController + TableView.swift in Sources */,
 				B3D465D82A0D107200264CFF /* CharacterDetailViewController.swift in Sources */,
+				B391E69F2A0DFC5A009D8B3B /* VideoGameCollectionViewCell.swift in Sources */,
 				B3D465D52A0D0A2C00264CFF /* DisneyService.swift in Sources */,
 				B33E00922A0CC33C000A8FEA /* CodableExtension.swift in Sources */,
 				B33E00792A0CB2B4000A8FEA /* BaseServiceEndPoint.swift in Sources */,
@@ -345,6 +372,7 @@
 				B33E007C2A0CB35A000A8FEA /* Logger.swift in Sources */,
 				B3D465DA2A0D108300264CFF /* CharacterDetailViewModel.swift in Sources */,
 				B33E00472A0CABBC000A8FEA /* AppDelegate.swift in Sources */,
+				B391E6982A0DF9C4009D8B3B /* StringExtension.swift in Sources */,
 				B33E00492A0CABBC000A8FEA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +518,9 @@
 				INFOPLIST_FILE = Disneyverse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,6 +548,9 @@
 				INFOPLIST_FILE = Disneyverse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

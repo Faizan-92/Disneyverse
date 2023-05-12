@@ -16,6 +16,7 @@ final class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var videoGamesCollectionView: UICollectionView!
 
     let viewModel: CharacterDetailViewModel
+    var videoGameCellSizeArray: [CGSize] = []
 
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
@@ -38,22 +39,51 @@ final class CharacterDetailViewController: UIViewController {
             placeholderImage: UIImage(systemName: "person.fill")
         )
         nameLabel.text = viewModel.name
-        setupFilmsCollectionView()
-        setupVideoGamesCollectionView()
+        setupFilmsCollectionViewIfNeeded()
+        setupVideoGamesCollectionViewIfNeeded()
     }
 
-    private func setupFilmsCollectionView() {
+    private func setupFilmsCollectionViewIfNeeded() {
+        guard viewModel.filmsList.count > 0 else { return }
+    
         filmsCollectionView.delegate = self
         filmsCollectionView.dataSource = self
 
         filmsCollectionView.register(
-            FilmDetailCollectionViewCell.self,
+            UINib(nibName: FilmDetailCollectionViewCell.className, bundle: nil),
             forCellWithReuseIdentifier: FilmDetailCollectionViewCell.className
         )
+        filmsCollectionView.showsHorizontalScrollIndicator = false
     }
 
-    private func setupVideoGamesCollectionView() {
-        
+    private func setupVideoGamesCollectionViewIfNeeded() {
+        guard viewModel.videoGamesList.count > 0 else { return }
+        calculateVideoGameCellSize()
+    
+        videoGamesCollectionView.delegate = self
+        videoGamesCollectionView.dataSource = self
+        videoGamesCollectionView.register(
+            UINib(nibName: VideoGameCollectionViewCell.className, bundle: nil),
+            forCellWithReuseIdentifier: VideoGameCollectionViewCell.className
+        )
+        videoGamesCollectionView.showsHorizontalScrollIndicator = false
+        videoGamesCollectionView.showsVerticalScrollIndicator = false
+        let customLayout = CustomCollectionViewLayout()
+        customLayout.delegate = self
+        videoGamesCollectionView.setCollectionViewLayout(customLayout, animated: false)
+        videoGamesCollectionView.bounces = false
+    }
+
+    private func calculateVideoGameCellSize() {
+        for index in 0..<viewModel.videoGamesList.count {
+            let font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            let height: CGFloat = 60
+            let textToDisplay = viewModel.videoGamesList[index] ?? ""
+            let fullTextWidth = textToDisplay.widthWithConstrainedHeight(height: height, font: font)
+            let finalTextWidth = min(fullTextWidth, 180)
+            let width = finalTextWidth + 40
+            videoGameCellSizeArray.append(CGSize(width: width, height: height))
+        }
     }
 }
 
