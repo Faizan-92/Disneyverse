@@ -7,6 +7,11 @@
 
 import UIKit
 
+// Note: You might see warning: "This method should not be called on the main thread as it
+// may lead to UI unresponsiveness.". It can be ignored for now, as it is a known issue
+// when using WKWebView.
+// https://stackoverflow.com/questions/74038451/in-xcode-14-ios-16-purple-warnings-starting-with-this-method-should-not-be-ca
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,9 +31,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-//
-//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//    }
-
 }
 

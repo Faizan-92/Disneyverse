@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    /// Generates a random color
     static var random: UIColor {
         let redValue = CGFloat(drand48())
         let greenValue = CGFloat(drand48())

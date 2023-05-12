@@ -33,7 +33,6 @@ extension ExploreViewController: UITableViewDelegate {
             sourceUrl: URL(string: selectedCharacter.sourceUrl ?? "")
         )
         let characterDetailViewController = CharacterDetailViewController(viewModel: viewModel)
-        Logger.log("didSelectRowAt \(indexPath.row)")
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(characterDetailViewController, animated: true)
         }

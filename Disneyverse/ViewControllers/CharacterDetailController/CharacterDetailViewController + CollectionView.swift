@@ -50,9 +50,11 @@ extension CharacterDetailViewController: UICollectionViewDelegate, UICollectionV
 
 extension CharacterDetailViewController: CustomCollectionViewLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        // Sizes are cached in array to avoid recalculating width of text
         return videoGameCellSizeArray[indexPath.row]
     }
     
+    // Returns the x and y offset of cell at given index path
     func collectionView(_ collectionView: UICollectionView, offsetForItemAtIndexPath indexPath: IndexPath) -> (CGFloat, CGFloat) {
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
@@ -76,6 +78,7 @@ extension CharacterDetailViewController: CustomCollectionViewLayoutDelegate {
         return (xOffset, yOffset)
     }
 
+    /// Returns the content size of entire collection view
     func getContentSize(_ collectionView: UICollectionView) -> CGSize {
         var xPos: CGFloat = 0
         var height: CGFloat = videoGameCellSizeArray[0].height

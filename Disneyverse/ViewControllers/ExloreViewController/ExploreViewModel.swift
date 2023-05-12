@@ -22,10 +22,10 @@ final class ExploreViewModel {
     var characters: [CharacterInfo] = [ ]
 
     func fetchCharacters(havingName newName: String) -> Observable<[CharacterInfo]?> {
-        // Reset current and total pages count on receiving new name
+        // Reset current and total pages count on receiving new input query
         if previouslySearchedName != newName {
             currentPage = 1
-            totalPages = Int.max
+            totalPages = Int.max // setting total pages to infinte
         } else { // Else fetch the next page of current name
             // But, if all pages are already fetched, don't hit API
             if currentPage == totalPages {
@@ -40,11 +40,12 @@ final class ExploreViewModel {
             pageNumber: currentPage,
             pageSize: pageSize,
             errorHandler: { [weak self] in
-                // Showing oops in case of any error
+                // Showing oops in case of any API error
                 self?.hideZeroStateViewSubject.onNext(false)
             }
         )
             .map { [weak self] response -> [CharacterInfo]? in
+                // If the query searched has 0 total pages, show zero state view
                 self?.totalPages = response?.pageInfo?.totalPages ?? 0
                 let shouldHideZeroStateView = self?.totalPages != 0
                 self?.hideZeroStateViewSubject.onNext(shouldHideZeroStateView)
@@ -52,7 +53,12 @@ final class ExploreViewModel {
             }
         
     }
-
+    
+    /// appends/replaces the newly fetched characters in the datasource
+    /// - Parameters:
+    ///   - newList: list of newly fetched users
+    ///   - shouldReplace: should be true when we want to replace the items in list. e.g. typing new name in search query.
+    ///   false when we want to append new items in the list. e.g. fetching next page of same query.
     func updateCharacters(newList: [CharacterInfo], shouldReplace: Bool) {
         if shouldReplace {
             characters = newList
