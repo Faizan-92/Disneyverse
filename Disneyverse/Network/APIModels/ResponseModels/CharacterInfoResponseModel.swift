@@ -20,7 +20,6 @@ struct CharacterInfoResponseModel: Codable {
 
 // MARK: - CharacterInfo
 struct CharacterInfo: Codable {
-    let id: Int?
     let films: [String]?
     let videoGames: [String]?
     let sourceUrl: String?
@@ -29,7 +28,6 @@ struct CharacterInfo: Codable {
     let url: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
         case films
         case videoGames
         case sourceUrl

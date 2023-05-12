@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = UINavigationController(rootViewController: ExploreViewController())
+        window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
     }
 

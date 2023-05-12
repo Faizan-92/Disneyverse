@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 final class FilmDetailCollectionViewCellViewModel {
     let name: String
-    init(name: String) {
+    let font: UIFont
+
+    init(name: String, font: UIFont) {
         self.name = name
+        self.font = font
     }
 }

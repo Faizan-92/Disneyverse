@@ -53,6 +53,7 @@ final class ExploreViewController: UIViewController {
     private func registerTableView() {
         characterListTableView.delegate = self
         characterListTableView.dataSource = self
+        characterListTableView.estimatedRowHeight = 72
         characterListTableView.register(
             UINib(nibName: CharacterInfoTableViewCell.className, bundle: nil),
             forCellReuseIdentifier: CharacterInfoTableViewCell.className
@@ -94,7 +95,7 @@ final class ExploreViewController: UIViewController {
             })
         // Adding throttle so that if it is triggered multiple times in 1 second, we make
         // API call only once.
-            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(1000), latest: false, scheduler: MainScheduler.instance)
             .withUnretained(self)
             .flatMapLatest({ (owner: ExploreViewController, _) -> Observable<[CharacterInfo]?> in
                 let name = owner.searchBar.text ?? ""

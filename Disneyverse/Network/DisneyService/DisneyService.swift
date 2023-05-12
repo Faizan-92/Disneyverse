@@ -52,7 +52,8 @@ final class DisneyService: BaseService {
     func fetchCharacters(
         havingName name: String,
         pageNumber: Int,
-        pageSize: Int
+        pageSize: Int,
+        errorHandler: @escaping (() -> Void)
     ) -> Observable<CharacterInfoResponseModel?> {
 
         let endPoint: DisneyServiceEndPoint = .filterCharacters(
@@ -63,7 +64,8 @@ final class DisneyService: BaseService {
 
         return makeRxRequest(
             url: endPoint.url,
-            method: endPoint.methodType
+            method: endPoint.methodType,
+            errorHandler: errorHandler
         )
     }
     

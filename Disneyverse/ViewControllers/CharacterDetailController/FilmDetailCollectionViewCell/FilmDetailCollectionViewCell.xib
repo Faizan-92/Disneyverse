@@ -10,31 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lgD-rD-R91" customClass="FilmDetailCollectionViewCell" customModule="Disneyverse" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilmDetailCollectionViewCell" id="EuF-AZ-xnX" customClass="FilmDetailCollectionViewCell" customModule="Disneyverse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1cI-Ke-4Wh">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YrX-aU-ERp">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojk-8I-eT9" userLabel="name_label">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvU-Pr-fmf" userLabel="name_label">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ojk-8I-eT9" firstAttribute="top" secondItem="1cI-Ke-4Wh" secondAttribute="top" id="C6a-Tx-NSI"/>
-                    <constraint firstAttribute="bottom" secondItem="ojk-8I-eT9" secondAttribute="bottom" id="GIw-jR-3bj"/>
-                    <constraint firstItem="ojk-8I-eT9" firstAttribute="leading" secondItem="1cI-Ke-4Wh" secondAttribute="leading" id="QoJ-AN-Sa8"/>
-                    <constraint firstAttribute="trailing" secondItem="ojk-8I-eT9" secondAttribute="trailing" id="t1W-NV-nWL"/>
+                    <constraint firstItem="jvU-Pr-fmf" firstAttribute="top" secondItem="YrX-aU-ERp" secondAttribute="top" id="6Iy-ai-GKs"/>
+                    <constraint firstAttribute="bottom" secondItem="jvU-Pr-fmf" secondAttribute="bottom" id="jC7-ZJ-zLV"/>
+                    <constraint firstAttribute="trailing" secondItem="jvU-Pr-fmf" secondAttribute="trailing" id="tVZ-H8-t6e"/>
+                    <constraint firstItem="jvU-Pr-fmf" firstAttribute="leading" secondItem="YrX-aU-ERp" secondAttribute="leading" id="xS2-16-g06"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
-                <outlet property="nameLabel" destination="ojk-8I-eT9" id="89g-o5-w2h"/>
+                <outlet property="nameLabel" destination="jvU-Pr-fmf" id="E6y-IH-OBj"/>
             </connections>
-            <point key="canvasLocation" x="19.847328244274809" y="20.422535211267608"/>
+            <point key="canvasLocation" x="-253" y="10"/>
         </collectionViewCell>
     </objects>
 </document>

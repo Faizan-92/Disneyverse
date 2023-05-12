@@ -9,11 +9,17 @@ import Foundation
 import UIKit
 
 final class FilmDetailCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var nameLabel: UILabel!
-    
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
     func setupCell(viewModel: FilmDetailCollectionViewCellViewModel) {
         nameLabel.text = viewModel.name
+        nameLabel.font = viewModel.font
+        contentView.backgroundColor = UIColor.random
     }
 
     override func prepareForReuse() {
