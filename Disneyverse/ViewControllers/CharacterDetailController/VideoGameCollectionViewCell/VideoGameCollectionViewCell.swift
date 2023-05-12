@@ -10,25 +10,33 @@ import UIKit
 
 final class VideoGameCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var lblTitle:UILabel!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.layer.borderWidth = 1
+    let selectedStateColor = UIColor.purple
+    let nonSelectedStateColor = UIColor.lightGray
+
+    override var isSelected: Bool {
+        didSet {
+            handleCellSelection()
+        }
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = self.frame.size.height / 2
+    func configure(title: String, font: UIFont) {
+        titleLabel.text = title
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = font
+        containerView.backgroundColor = nonSelectedStateColor
+        containerView.layer.cornerRadius = containerView.frame.height / 2
+        handleCellSelection()
     }
 
-    func configure(title: String) {
-        lblTitle.text = title
-        lblTitle.textColor = .black
-        layer.borderColor = UIColor.random.cgColor
-        backgroundColor = UIColor.random
-        closeButton.titleLabel?.text = ""
+    func handleCellSelection() {
+        if isSelected {
+            containerView.backgroundColor = selectedStateColor
+        } else {
+            containerView.backgroundColor = nonSelectedStateColor
+        }
     }
 }
 

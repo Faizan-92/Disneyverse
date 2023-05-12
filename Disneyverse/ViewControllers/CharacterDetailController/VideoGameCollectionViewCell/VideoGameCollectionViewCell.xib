@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,46 +14,49 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mhd-yo-092" customClass="VideoGameCollectionViewCell" customModule="Disneyverse" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="knz-RY-y8p">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="knz-RY-y8p">
                 <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="disney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKH-Jr-B9A" userLabel="title_label">
-                        <rect key="frame" x="9.9999999999999964" y="14.666666666666664" width="49.666666666666657" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poV-zd-IJL" userLabel="container_view">
+                        <rect key="frame" x="5" y="5" width="321" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="disney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKH-Jr-B9A" userLabel="title_label">
+                                <rect key="frame" x="10" y="9.6666666666666643" width="301" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="Q9t-tO-rDX"/>
+                            <constraint firstItem="AKH-Jr-B9A" firstAttribute="centerX" secondItem="poV-zd-IJL" secondAttribute="centerX" id="AD4-St-aZC"/>
+                            <constraint firstItem="AKH-Jr-B9A" firstAttribute="leading" secondItem="poV-zd-IJL" secondAttribute="leading" constant="10" id="G9I-Gs-eGo"/>
+                            <constraint firstItem="AKH-Jr-B9A" firstAttribute="centerY" secondItem="poV-zd-IJL" secondAttribute="centerY" id="Zof-vd-AS0"/>
+                            <constraint firstAttribute="trailing" secondItem="AKH-Jr-B9A" secondAttribute="trailing" constant="10" id="aOF-yd-aeA"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6J-nI-8hR" userLabel="close_button">
-                        <rect key="frame" x="69.666666666666686" y="8" width="20" height="34.333333333333336"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="b4v-xI-Y01"/>
-                        </constraints>
-                        <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
-                    </button>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="AKH-Jr-B9A" firstAttribute="centerY" secondItem="knz-RY-y8p" secondAttribute="centerY" id="DOx-aG-fLI"/>
-                    <constraint firstAttribute="trailing" secondItem="W6J-nI-8hR" secondAttribute="trailing" constant="10" id="dKq-QY-71Y"/>
-                    <constraint firstItem="W6J-nI-8hR" firstAttribute="centerY" secondItem="knz-RY-y8p" secondAttribute="centerY" id="gBq-1w-LMA"/>
-                    <constraint firstItem="AKH-Jr-B9A" firstAttribute="leading" secondItem="knz-RY-y8p" secondAttribute="leading" constant="10" id="o6P-s3-9cV"/>
-                    <constraint firstItem="W6J-nI-8hR" firstAttribute="leading" secondItem="AKH-Jr-B9A" secondAttribute="trailing" constant="10" id="o85-8A-dHP"/>
+                    <constraint firstAttribute="trailing" secondItem="poV-zd-IJL" secondAttribute="trailing" constant="5" id="HS1-P0-X7p"/>
+                    <constraint firstAttribute="bottom" secondItem="poV-zd-IJL" secondAttribute="bottom" constant="5" id="hhw-re-wDA"/>
+                    <constraint firstItem="poV-zd-IJL" firstAttribute="leading" secondItem="knz-RY-y8p" secondAttribute="leading" constant="5" id="iT5-Kc-oSt"/>
+                    <constraint firstItem="poV-zd-IJL" firstAttribute="top" secondItem="knz-RY-y8p" secondAttribute="top" constant="5" id="kJy-kv-gvl"/>
                 </constraints>
             </collectionViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="331" height="50"/>
             <connections>
-                <outlet property="closeButton" destination="W6J-nI-8hR" id="qZR-cm-kZN"/>
-                <outlet property="lblTitle" destination="AKH-Jr-B9A" id="Y3T-59-Ard"/>
+                <outlet property="containerView" destination="poV-zd-IJL" id="0Zz-7r-YFX"/>
+                <outlet property="titleLabel" destination="AKH-Jr-B9A" id="v0a-aw-tvm"/>
             </connections>
             <point key="canvasLocation" x="129" y="20"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

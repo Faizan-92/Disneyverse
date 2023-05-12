@@ -7,16 +7,24 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 final class CharacterDetailViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var filmsCollectionView: UICollectionView!
+    @IBOutlet weak var sourceTextView: UITextView!
     @IBOutlet weak var videoGamesCollectionView: UICollectionView!
 
     let viewModel: CharacterDetailViewModel
     var videoGameCellSizeArray: [CGSize] = []
+    var videoGameCellsOffset: [(CGFloat, CGFloat)] = []
+    let filmListFont = UIFont.systemFont(ofSize: 17, weight: .regular)
+    let filmListItemPadding: CGFloat = 5
+    let filmListItemHeight: CGFloat = 60
+    let videoGameListFont = UIFont.systemFont(ofSize: 12, weight: .regular)
+    let videoGameCellMaxWidth: CGFloat = 120
 
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
@@ -39,6 +47,7 @@ final class CharacterDetailViewController: UIViewController {
             placeholderImage: UIImage(systemName: "person.fill")
         )
         nameLabel.text = viewModel.name
+        setupSourceTextView(url: viewModel.sourceUrl)
         setupFilmsCollectionViewIfNeeded()
         setupVideoGamesCollectionViewIfNeeded()
     }
@@ -68,6 +77,7 @@ final class CharacterDetailViewController: UIViewController {
         )
         videoGamesCollectionView.showsHorizontalScrollIndicator = false
         videoGamesCollectionView.showsVerticalScrollIndicator = false
+        videoGamesCollectionView.allowsMultipleSelection = true
         let customLayout = CustomCollectionViewLayout()
         customLayout.delegate = self
         videoGamesCollectionView.setCollectionViewLayout(customLayout, animated: false)
@@ -76,14 +86,42 @@ final class CharacterDetailViewController: UIViewController {
 
     private func calculateVideoGameCellSize() {
         for index in 0..<viewModel.videoGamesList.count {
-            let font = UIFont.systemFont(ofSize: 17, weight: .regular)
             let height: CGFloat = 60
             let textToDisplay = viewModel.videoGamesList[index] ?? ""
-            let fullTextWidth = textToDisplay.widthWithConstrainedHeight(height: height, font: font)
-            let finalTextWidth = min(fullTextWidth, 180)
-            let width = finalTextWidth + 40
+            let fullTextWidth = textToDisplay.widthWithConstrainedHeight(height: height, font: videoGameListFont)
+            let finalTextWidth = min(fullTextWidth, videoGameCellMaxWidth)
+            let width = finalTextWidth + 30 // 30 is padding
             videoGameCellSizeArray.append(CGSize(width: width, height: height))
         }
     }
+
+    private func setupSourceTextView(url: URL?) {
+        sourceTextView.delegate = self
+        let attributedString = NSMutableAttributedString(string: sourceTextView.text)
+        if let url {
+            let range = NSRange(location: 0, length: attributedString.length)
+            attributedString.addAttribute(.link, value: url, range: range)
+            sourceTextView.attributedText = attributedString
+        }
+        sourceTextView.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue]
+    }
 }
 
+extension CharacterDetailViewController: UITextViewDelegate {
+
+    func textView(
+        _ textView: UITextView,
+        shouldInteractWith URL: URL,
+        in characterRange: NSRange,
+        interaction: UITextItemInteraction
+    ) -> Bool {
+        let viewController = WebViewController()
+        viewController.loadUrl(viewModel.sourceUrl)
+        self.present(viewController, animated: true)
+        return false
+    }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false // To disable copy/paste prompts
+    }
+}

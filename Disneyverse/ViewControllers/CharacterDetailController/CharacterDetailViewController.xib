@@ -14,7 +14,8 @@
                 <outlet property="filmsCollectionView" destination="blK-Te-Rge" id="PUa-Oo-hus"/>
                 <outlet property="nameLabel" destination="yNY-PV-0KJ" id="sOv-bZ-v4y"/>
                 <outlet property="profileImage" destination="MeW-Nn-B8A" id="W8n-z6-0P1"/>
-                <outlet property="videoGamesCollectionView" destination="GMK-b5-ZKA" id="zUX-p4-txk"/>
+                <outlet property="sourceTextView" destination="Kh2-lA-ELL" id="pFg-KH-7d4"/>
+                <outlet property="videoGamesCollectionView" destination="GMK-b5-ZKA" id="oRD-D0-Hwe"/>
                 <outlet property="view" destination="x0h-oc-PyR" id="bRP-qR-gez"/>
             </connections>
         </placeholder>
@@ -62,11 +63,24 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kh2-lA-ELL" userLabel="source_text_view">
+                    <rect key="frame" x="313" y="239" width="70" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="BlR-W6-jLD"/>
+                        <constraint firstAttribute="width" constant="70" id="RTl-Lu-7bM"/>
+                    </constraints>
+                    <color key="textColor" systemColor="linkColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="url"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                </textView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Vwg-Tf-eN3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="GMK-b5-ZKA" firstAttribute="trailing" secondItem="Vwg-Tf-eN3" secondAttribute="trailing" id="5sU-qi-w9d"/>
+                <constraint firstItem="Kh2-lA-ELL" firstAttribute="bottom" secondItem="MeW-Nn-B8A" secondAttribute="bottom" id="6KM-b4-QAE"/>
                 <constraint firstItem="blK-Te-Rge" firstAttribute="trailing" secondItem="Vwg-Tf-eN3" secondAttribute="trailing" id="9Ad-BB-1yH"/>
                 <constraint firstItem="GMK-b5-ZKA" firstAttribute="leading" secondItem="Vwg-Tf-eN3" secondAttribute="leading" id="HW7-sm-zOz"/>
                 <constraint firstItem="blK-Te-Rge" firstAttribute="top" secondItem="yNY-PV-0KJ" secondAttribute="bottom" constant="10" id="OG9-bt-lF2"/>
@@ -75,6 +89,7 @@
                 <constraint firstItem="blK-Te-Rge" firstAttribute="leading" secondItem="Vwg-Tf-eN3" secondAttribute="leading" id="WJ1-uR-egP"/>
                 <constraint firstItem="yNY-PV-0KJ" firstAttribute="centerX" secondItem="Vwg-Tf-eN3" secondAttribute="centerX" id="cAg-Ji-Jht"/>
                 <constraint firstItem="Vwg-Tf-eN3" firstAttribute="bottom" secondItem="GMK-b5-ZKA" secondAttribute="bottom" id="dAo-CT-KtI"/>
+                <constraint firstItem="Vwg-Tf-eN3" firstAttribute="trailing" secondItem="Kh2-lA-ELL" secondAttribute="trailing" constant="10" id="lSU-2F-oHZ"/>
                 <constraint firstItem="MeW-Nn-B8A" firstAttribute="centerX" secondItem="Vwg-Tf-eN3" secondAttribute="centerX" id="rfw-VX-9Vc"/>
                 <constraint firstItem="yNY-PV-0KJ" firstAttribute="top" secondItem="MeW-Nn-B8A" secondAttribute="bottom" constant="10" id="vkn-Ih-0ka"/>
             </constraints>
@@ -82,6 +97,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

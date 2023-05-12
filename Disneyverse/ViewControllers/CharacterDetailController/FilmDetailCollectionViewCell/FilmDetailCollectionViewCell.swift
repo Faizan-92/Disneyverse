@@ -18,6 +18,7 @@ final class FilmDetailCollectionViewCell: UICollectionViewCell {
 
     func setupCell(viewModel: FilmDetailCollectionViewCellViewModel) {
         nameLabel.text = viewModel.name
+        nameLabel.font = viewModel.font
         contentView.backgroundColor = UIColor.random
     }
 

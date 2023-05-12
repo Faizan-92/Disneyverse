@@ -55,13 +55,13 @@ class BaseService {
     ///   - url: url which should be hit
     ///   - method: REST method type. e.g. get, put, post, delete, patch, etc.
     ///   - parameters: The query params to be appended to base urlString
-    ///   - completionHandler: Completion handler for successful API completion
     ///   - errorHandler: Closure to handle error in API response
     /// - Returns: Observable can be subscribed to, to get notified about API response or error.
     func makeRxRequest<T: Codable>(
         url: URL?,
         method: HTTPMethod,
-        parameters: Parameters? = nil
+        parameters: Parameters? = nil,
+        errorHandler: @escaping(() -> Void)
     ) -> Observable<T?> {
 
         guard let urlString = url?.absoluteString else {
@@ -83,7 +83,7 @@ class BaseService {
                     observer.onNext(result)
                     observer.onCompleted()
                 case .failure(let error):
-                    Logger.log("error:" + String(describing: error.errorDescription))
+                    errorHandler()
                     observer.onCompleted()
                 }
             }

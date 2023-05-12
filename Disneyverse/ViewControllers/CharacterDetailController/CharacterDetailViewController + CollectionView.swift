@@ -10,12 +10,9 @@ import UIKit
 
 extension CharacterDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        let padding: CGFloat = 5
-        let height: CGFloat = 60
         let textToDisplay = (viewModel.filmsList[indexPath.row] ?? "")
-        let width = textToDisplay.widthWithConstrainedHeight(height: height, font: font) + 2 * padding
-        return CGSize(width: width, height: height)
+        let width = textToDisplay.widthWithConstrainedHeight(height: filmListItemHeight, font: filmListFont) + 2 * filmListItemPadding
+        return CGSize(width: width, height: filmListItemHeight)
     }
 }
 
@@ -32,7 +29,7 @@ extension CharacterDetailViewController: UICollectionViewDelegate, UICollectionV
             ) as! VideoGameCollectionViewCell
             
             let gameName = viewModel.videoGamesList[indexPath.row] ?? ""
-            cell.configure(title: gameName)
+            cell.configure(title: gameName, font: videoGameListFont)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(
@@ -41,7 +38,10 @@ extension CharacterDetailViewController: UICollectionViewDelegate, UICollectionV
             ) as! FilmDetailCollectionViewCell
             
             let filmName = viewModel.filmsList[indexPath.row] ?? ""
-            let cellViewModel = FilmDetailCollectionViewCellViewModel(name: filmName)
+            let cellViewModel = FilmDetailCollectionViewCellViewModel(
+                name: filmName,
+                font: filmListFont
+            )
             cell.setupCell(viewModel: cellViewModel)
             return cell
         }
@@ -56,6 +56,9 @@ extension CharacterDetailViewController: CustomCollectionViewLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, offsetForItemAtIndexPath indexPath: IndexPath) -> (CGFloat, CGFloat) {
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
+        // Note: the logic can be optimised further by caching the offset and size of previous cells.
+        // Not doing it right now to keep code simple, as it's is just a simple calculation
+        // showing almost similar CPU usage as controllers not having videoGameCollectionView.
         for index in 0..<indexPath.row {
             let cellSize = videoGameCellSizeArray[index]
             if xOffset + cellSize.width > collectionView.bounds.width {
@@ -64,14 +67,12 @@ extension CharacterDetailViewController: CustomCollectionViewLayoutDelegate {
             } else {
                 xOffset += cellSize.width
             }
-            Logger.log("debug: \(index) \(xOffset) \(yOffset) \(cellSize)")
         }
         let newCellSize = videoGameCellSizeArray[indexPath.row]
         if xOffset + newCellSize.width > collectionView.bounds.width {
             xOffset = 0
             yOffset += newCellSize.height
         }
-        Logger.log("debug: new cell \(indexPath.row) \(xOffset) \(yOffset) \(newCellSize)")
         return (xOffset, yOffset)
     }
 

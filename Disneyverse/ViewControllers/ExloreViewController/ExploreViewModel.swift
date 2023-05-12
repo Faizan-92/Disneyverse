@@ -38,7 +38,11 @@ final class ExploreViewModel {
         return disneyService.fetchCharacters(
             havingName: newName,
             pageNumber: currentPage,
-            pageSize: pageSize
+            pageSize: pageSize,
+            errorHandler: { [weak self] in
+                // Showing oops in case of any error
+                self?.hideZeroStateViewSubject.onNext(false)
+            }
         )
             .map { [weak self] response -> [CharacterInfo]? in
                 self?.totalPages = response?.pageInfo?.totalPages ?? 0
